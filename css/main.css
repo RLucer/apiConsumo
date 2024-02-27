@@ -64,3 +64,24 @@ footer {
     text-align: center;
     background-color: rgb(123, 166, 239);
 }
+
+
+
+
+
+/* 
+ */
+
+ .flexbox-container {
+    display: -ms-flex;
+    display: -webkit-flex;
+    display: flex;
+    }
+    .flexbox-container > div {
+    width: 50%;
+    padding: 10px;
+    }
+    
+    .flexbox-container > div:first-child {
+    margin-right: 20px;
+    }

@@ -17,10 +17,6 @@
 
   <title>Dashboard!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <style>
-
-  </style>
 </head>
 
 
@@ -50,6 +46,8 @@
         </div>
       </div>
     </div>
+
+
     <div class="content w-100">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <p data-toggle="collapse" aria-expanded="false" class=" bg-dark text-light">
@@ -81,34 +79,35 @@
           </div>
         </div>
       </nav>
-      <section class="p-3">
-        <div class="container-fluid">
+
+      <section class="p-2">
+        <div class="container-xl">
           <div class="row">
-            <label for="">Consulta valores de combustibles</label>
-            <div class="col-sm-4">
+            <div class="col-md-6">
               <form class="form">
+                <label for="">Consulta valores de combustibles</label>
                 <div class="row">
-                  <div class="col-sm-12">
-                 
-                      <div class="input-group mb-3">
-                        <input type="text"  id="input-search" class="form-control" placeholder="Nombre comuna con Mayúscula" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary"  onclick="checkPriceGas(event)" type="button" id="button-addon2" >Consultar</button>
-                      </div>
+                  <div class="col-md-12">
+                    <div class="input-group mb-3">
+                      <input type="text" id="input-search" class="form-control"
+                        placeholder="Nombre comuna con Mayúscula" aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
+                      <button class="btn btn-outline-secondary" onclick="checkPriceGas(event)" type="button"
+                        id="button-addon2">Consultar</button>
+                    </div>
+                  </div>
                 </div>
               </form>
-            </div>
-            <span id="comuna">
-            </span>
-            <div class="col-sm-8">
-              <ul id="fuels-details">
+              <span id="comuna">
+              </span>
+              <div class="col-md-12">
+                <ul id="fuels-details">
 
-              </ul>
+                </ul>
+              </div>
+              <canvas id="graphic-fuels"></canvas>
             </div>
-            <canvas id="graphic-fuels"></canvas>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
               <div class="card" style="width: auto">
                 <div class="card-body">
                   <h5 class="card-title">Gráfico paises SudAmerica </h5>
@@ -117,11 +116,12 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
+
     </div>
+  </div>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -135,7 +135,7 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
 
- 
+
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
