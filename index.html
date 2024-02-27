@@ -114,11 +114,17 @@
                 <section class="p-3">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-12">
-                                <form class="form-inline my-2 my-md-0">
-                                    <label for="">Consulta por comuna los precios de los combustibles</label>
-                                    <input type="text" id="input-search" placeholder="Ingrese comuna con primera letra mayúscula">
-                                    <button type="button" onclick="checkPriceGas(event)" class="btn btn-outline-success mt-2">Success</button>
+
+                          <label for="">Consulta por comuna los precios de los combustibles</label>
+                                  
+                            <div class="col-sm-4">
+                                <form class="form" >
+                                  <div class="row">
+                                    <div class="col-sm-12"><input type="text" id="input-search" placeholder="Ingrese comuna con primera letra mayúscula"></div>
+                                    <div class="col-sm-12"> <button type="button" onclick="checkPriceGas(event)" class="btn btn-outline-success mt-3 d-grid gap-2">Consultar</button></div> 
+                                  </div>
+                                     
+                                   
                                 </form>
                             </div>
                             <span id="comuna">
