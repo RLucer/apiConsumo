@@ -4,4 +4,4 @@ import { showUser } from "./user.js";
 
 showIndicator();
 showUser();
-// showCountry();
+showCountry();
