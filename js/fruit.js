@@ -90,19 +90,14 @@ function showPriceGas(gasStations) {
 
             //agrego a la lista que voy a mostrar
 
-            list.innerHTML = `
-        
-          <h6>Estacion:  ${gasStation.distribuidor.marca}</h6>
-          <p>Precio 93: $ ${Math.round(b93)}</p>
-          <p>Precio 95: $ ${Math.round(b95)}</p>
-          <p>Precio 97: $ ${Math.round(b97)}</p>
-         <p>Direccion: ${gasStation.ubicacion.direccion},   ${
-        gasStation.ubicacion.nombre_comuna
-      } </p>
-   
-         
-        
-      `;
+            list.innerHTML =
+                `<h6>Estacion:  ${gasStation.distribuidor.marca}</h6>
+          <p>Precio 93: ${Math.round(b93)}</p>
+          <p>Precio 95: ${Math.round(b95)}</p>
+          <p>Precio 97: ${Math.round(b97)}</p>
+         <p>Direccion: ${gasStation.ubicacion.direccion},   ${gasStation.ubicacion.nombre_comuna } </p> `;
+
+
             fuelsDetailsElement.appendChild(list);
             comun = [];
             comun.push(prueba);

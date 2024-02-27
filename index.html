@@ -87,8 +87,8 @@
                     <div class="container-xl">
                         <a class="navbar-brand nav-indicator" href="#">Indicadores</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07XL" aria-controls="navbarsExample07XL" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
                         <div class="collapse navbar-collapse" id="navbarsExample07">
                             <ul class="navbar-nav mr-auto">
@@ -114,24 +114,28 @@
                 <section class="p-3">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-sm-12">
-                                <form class="form-inline my-2 my-md-0">
-                                    <label for="">Consulta Precio de los combustibles por comuna</label>
+                            <div class="col-sm-4">
+                                <form class="form my-2 my-md-0 mt-3">
+                                    <label for="">Consulta Precio de los combustibles por comuna </label>
                                     <input type="text" id="input-search" placeholder="Ingrese nombre de comuna con Mayúscula">
                                     <button type="button" onclick="checkPriceGas(event)" class="btn btn-outline-success mt-2">Success</button>
+
                                 </form>
                             </div>
-                            <span id="comuna">
-                  
-                </span>
-                            <div class="col-sm-7">
+                            <div class="col-sm-8">
+                                <span id="comuna">
 
-                                <ul id="fuels-details"></ul>
+                                </span>
 
+                                <div class="col-sm-7">
+                                    <ul id="fuels-details"></ul>
+                                </div>
 
+                                <canvas id="graphic-fuels">
+
+                </canvas>
                             </div>
 
-                            <canvas id="graphic-fuels"></canvas>
                         </div>
                         <br>
                         <div class="row">
