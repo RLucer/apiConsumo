@@ -14,9 +14,13 @@ Se crear una pagina con la finalidad de consumir una API y reflejarlo en html ut
 * Chart.js
 * Git Hub
 
+## APIs utilizadas
 
-## API xxxxx
-## API xxxxx
-## API xxxxx
+Las siguientes api fueron consultas para crear nuestro dashboarda
 
-
+| Plugin | README |
+| ------ | ------ |
+| miindicador.cl  | [https://mindicador.cl/api][PlDb] |
+| https://randomuser.me | [https://randomuser.me/api/?results=1] |
+| https://restcountries.com/| [https://restcountries.com/v3.1/subregion/South America] |
+| https://api.cne.cl/| [https://api.cne.cl/api/v4/estaciones] |
