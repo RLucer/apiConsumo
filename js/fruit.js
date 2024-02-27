@@ -52,14 +52,17 @@ const checkPriceGas = async(event) => {
     cls.innerHTML = "";
 
     showPriceGas(gasStations);
+    crearChart(gasStations);
     cls_input();
 };
 
 function showPriceGas(gasStations) {
     const fuelsDetailsElement = document.getElementById("fuels-details");
+   
     gasStations.forEach(function(gasStation) {
         const list = document.createElement("li");
         if (gasStation) {
+
             //creo un array porque el nombre de la clave del objeto es numerico
             let prueba = [];
             prueba = Object.values(gasStation);
@@ -87,9 +90,7 @@ function showPriceGas(gasStations) {
             } else {
                 b97 = 0;
             }
-
             //agrego a la lista que voy a mostrar
-
             list.innerHTML = `
         
           <h6>Estacion:  ${gasStation.distribuidor.marca}</h6>
@@ -99,56 +100,106 @@ function showPriceGas(gasStations) {
          <p>Direccion: ${gasStation.ubicacion.direccion},   ${
         gasStation.ubicacion.nombre_comuna
       } </p>
-   
-         
-        
-      `;
+   `;
             fuelsDetailsElement.appendChild(list);
-            comun = [];
-            comun.push(prueba);
+            
         }
+
     });
-    crearChart(gasStations);
+   
+
+    
+
 }
 
-function cls_input() {
-    document.getElementById("input-search").value = "";
-}
 
 function crearChart(gasStations) {
-    //
+    //aca deberia recibir los array de datos listo de la funcion anterior
 
-    //const stations = gasStationss.map(gasStation => gasStation.distribuidor.direccion)
+ 
     let station = [];
-    let price = [];
+    let price_93 = [];
+    let price_95 = [];
+    let price_97 = [];
+    const key93 = 93;
+    const key95 = 95;
+    const key97 = 97;
     gasStations.forEach(function(gasStation) {
         station.push(gasStation.distribuidor.marca)
         prueba = Object.values(gasStation);
-        price = prueba[2][93].precio
+        // price_93.push(prueba[2][93].precio);
+        // price_95.push(prueba[2][95].precio);
+        // price_97.push(prueba[2][97].precio);
+
+        if ((hasKey93 = Object.keys(prueba[2]).some((x) => x == key93))) {
+         
+            price_93.push(prueba[2][93].precio);
+        } else {
+            price_93.push(0);
+        }
+
+        if ((hasKey95 = Object.keys(prueba[2]).some((x) => x == key95))) {
+            price_95.push(prueba[2][95].precio);
+        } else {
+            price_95.push(0);
+        }
+
+        if ((hasKey97 = Object.keys(prueba[2]).some((x) => x == key97))) {
+            price_97.push(prueba[2][97].precio);
+        } else {
+            price_97.push(0);
+        }
+
 
     });
-
-
-
-    const grapFuel = document.getElementById("graphic-fuels");
-
+     
     const labels = station;
 
-
-
+    const dataset1 = {
+        label: "93",
+        data: price_93,
+        borderColor: 'rgba(248, 37, 37, 0.8)',
+        backgroundColor: 'rgba(248, 37, 37, 0.8)',
+        fill: false,
+        tension: 0.1
+    };
+    
+    const dataset2 = {
+        label: "95",
+        data: price_95,
+        borderColor: 'rgba(69, 248, 84, 0.8)',
+        backgroundColor :  'rgba(69, 248, 84, 0.8)',
+        fill: false,
+        tension: 0.1
+    };
+    
+    const dataset3 = {
+        label: "97",
+        data: price_97,
+        borderColor: 'rgba(69, 140, 248, 0.8)',
+        backgroundColor : 'rgba(69, 140, 248, 0.8)',
+        fill: false,
+        tension: 0.1
+    };
+    
+  
+    
+    const graph = document.getElementById("graphic-fuels");
+    
     const data = {
         labels: labels,
-        datasets: [{
-            label: "Ejemplo 1",
-            data: price,
-            backgroundColor: 'rgba(9, 129, 176, 0.2)'
-        }]
+        datasets: [dataset1,dataset2,dataset3]
     };
-
+    
     const config = {
         type: 'bar',
         data: data,
     };
+    
+    new Chart(graph, config);
+    
+}
 
-    new Chart(grapFuel, config);
+function cls_input() {
+    document.getElementById("input-search").value = "";
 }
