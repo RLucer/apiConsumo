@@ -52,8 +52,9 @@ const checkPriceGas = async(event) => {
     cls.innerHTML = "";
 
     showPriceGas(gasStations);
-    //destroyChart();
+    
     crearChart(gasStations);
+   
     cls_input();
 };
 
@@ -122,9 +123,9 @@ function showPriceGas(gasStations) {
 
 function crearChart(gasStations) {
     //aca deberia recibir los array de datos listo de la funcion anterior
-
+    $('#graphic-fuels').replaceWith($('<canvas id="graphic-fuels" height="320px"></canvas>'));
     const graph = document.getElementById("graphic-fuels");
-
+    
 
 
     let station = [];
@@ -202,24 +203,24 @@ function crearChart(gasStations) {
 
 
 
+     
+     myChart = new Chart(graph, config);
 
 
-    let myChart = new Chart(graph, config);
+  
 
 
-    // Para destruir el lienzo
-
-
-    function destroyChart() {
-        myChart.destroy();
-
-    }
+   
 
 
 
 
 }
+// function destroyChart() {
+//     const graph = document.getElementById("graphic-fuels")
+//     myChart.destroy();
 
+// }
 
 
 function cls_input() {
