@@ -52,7 +52,7 @@ const checkPriceGas = async(event) => {
     cls.innerHTML = "";
 
     showPriceGas(gasStations);
-    destroyChart();
+    //destroyChart();
     crearChart(gasStations);
     cls_input();
 };
