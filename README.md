@@ -3,7 +3,7 @@ Dashboard creado con fines de aprendizaje para ser presentado como el proyecto n
 
 Se crear una pagina con la finalidad de consumir una API y reflejarlo en html utilizando javascript.
 ## Screenshot
-![apiconsumo.](/img/home.png)
+![apiconsumo.](/img/home_2.png)
 
 ### Tecnologias utilizadas
 
@@ -20,7 +20,7 @@ Se crear una pagina con la finalidad de consumir una API y reflejarlo en html ut
 
 Las siguientes api fueron consultas para crear nuestro dashboarda
 
-|| Sitio | Dirección |
+| Sitio | Dirección |
 |-----| ------ | ------ |
 |Info Economica| www.miindicador.cl  | [https://mindicador.cl/api][PlDb] |
 |Info Usuario random| https://randomuser.me | [https://randomuser.me/api/?results=1] |
