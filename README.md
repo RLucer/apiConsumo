@@ -3,7 +3,7 @@ Dashboard creado con fines de aprendizaje para ser presentado como el proyecto n
 
 Se crear una pagina con la finalidad de consumir una API y reflejarlo en html utilizando javascript.
 ## Screenshot
-![apiconsumo.](/img/home_2.png)
+![apiconsumo.](/img/home_3.png)
 
 ### Tecnologias utilizadas
 

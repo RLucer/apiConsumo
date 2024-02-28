@@ -94,19 +94,18 @@ function showPriceGas(gasStations) {
                               <div id="accordion">
                             <div class="card">
                                 <div class="card-header" id="headingTwo">
-                                  <h5 class="mb-0">
+                                  <h5 class="mb-0"><center>
                                     <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <h6>${gasStation.distribuidor.marca}  </h6>
-                                    <p>${gasStation.ubicacion.direccion},${gasStation.ubicacion.nombre_comuna}
-                                    </p>
-                                    </button>
+                                    <h6>  ${gasStation.distribuidor.marca} </h6>
+                                    <p>${gasStation.ubicacion.direccion},${gasStation.ubicacion.nombre_comuna} </p>
+                                    </button></center>
                                   </h5>
                               </div>
                               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                  <div class="card-body">
+                                  <div lass="card-body"><center>
                                   <p>Combustible 93:  $ ${Math.round(b93)}</p>
                                   <p>Combustible 95:  $ ${Math.round(b95)}</p>
-                                  <p>Combustible 97:  $ ${Math.round(b97)}</p>
+                                  <p>Combustible 97:  $ ${Math.round(b97)}</p></center>
                                   </div>
                                 </div>
                               </div>
@@ -194,9 +193,17 @@ function crearChart(gasStations) {
     };
 
     const config = {
-        type: "bar",
+        type: 'bar',
         data: data,
-    };
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: 'Valor Combustible por estacion de servicio',
+            }
+          }
+        }
+      };
 
 
 
