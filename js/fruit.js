@@ -20,11 +20,22 @@ async function postToken() {
 const urlGas = "https://api.cne.cl/api/v4/estaciones";
 let fuels = [];
 
+function cls_warning(searchInput){
+    if(searchInput==''){
+        let warning = document.getElementById("warning");
+        warning.innerHTML=`<div class="alert alert-danger" role="alert">
+        Debe ingresar un nombre de Comuna
+      </div>`
+
+     }else{
+        warning.innerHTML="";
+     }
+}
 const checkPriceGas = async(event) => {
     event.preventDefault();
     const input = document.getElementById("input-search");
     const searchInput = input.value;
-
+    cls_warning(searchInput);
     const token = await postToken();
     const headers = {
         Authorization: `Bearer ${token}`,
