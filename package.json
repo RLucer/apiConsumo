@@ -1,0 +1,12 @@
+{
+  "name": "apiconsumo",
+  "version": "1.0.0",
+  "description": "Dashboard creado con fines de aprendizaje para ser presentado como el proyecto numero 3 del BootCamp UDD.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

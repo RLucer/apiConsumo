@@ -52,6 +52,7 @@ const checkPriceGas = async(event) => {
     cls.innerHTML = "";
 
     showPriceGas(gasStations);
+    destroyChart();
     crearChart(gasStations);
     cls_input();
 };
@@ -91,30 +92,26 @@ function showPriceGas(gasStations) {
             }
             //agrego a la lista que voy a mostrar
             list.innerHTML = `
-      <div id="accordion">
-   
-
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            <h6>Estacion:  ${gasStation.distribuidor.marca}  </h6>
-            <p>${gasStation.ubicacion.direccion},${gasStation.ubicacion.nombre_comuna}
-            </p>
-            </button>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-          <p>Combustible 93:  $ ${Math.round(b93)}</p>
-          <p>Combustible 95:  $ ${Math.round(b95)}</p>
-          <p>Combustible 97:  $ ${Math.round(b97)}</p>
-         
-          </div>
-        </div>
-      </div>
-      
-    </div>    `;
+                              <div id="accordion">
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                  <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <h6>Estacion:  ${gasStation.distribuidor.marca}  </h6>
+                                    <p>${gasStation.ubicacion.direccion},${gasStation.ubicacion.nombre_comuna}
+                                    </p>
+                                    </button>
+                                  </h5>
+                              </div>
+                              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                  <div class="card-body">
+                                  <p>Combustible 93:  $ ${Math.round(b93)}</p>
+                                  <p>Combustible 95:  $ ${Math.round(b95)}</p>
+                                  <p>Combustible 97:  $ ${Math.round(b97)}</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>    `;
             fuelsDetailsElement.appendChild(list);
         }
     });
@@ -123,15 +120,12 @@ function showPriceGas(gasStations) {
 
 
 
-
-
-
-
-
-
-
 function crearChart(gasStations) {
     //aca deberia recibir los array de datos listo de la funcion anterior
+
+    const graph = document.getElementById("graphic-fuels");
+
+
 
     let station = [];
     let price_93 = [];
@@ -143,9 +137,6 @@ function crearChart(gasStations) {
     gasStations.forEach(function(gasStation) {
         station.push(gasStation.distribuidor.marca);
         prueba = Object.values(gasStation);
-        // price_93.push(prueba[2][93].precio);
-        // price_95.push(prueba[2][95].precio);
-        // price_97.push(prueba[2][97].precio);
 
         if ((hasKey93 = Object.keys(prueba[2]).some((x) => x == key93))) {
             price_93.push(prueba[2][93].precio);
@@ -195,7 +186,7 @@ function crearChart(gasStations) {
         tension: 0.1,
     };
 
-    const graph = document.getElementById("graphic-fuels");
+
 
     const data = {
         labels: labels,
@@ -207,8 +198,29 @@ function crearChart(gasStations) {
         data: data,
     };
 
-    new Chart(graph, config);
+
+
+
+
+
+
+    let myChart = new Chart(graph, config);
+
+
+    // Para destruir el lienzo
+
+
+    function destroyChart() {
+        myChart.destroy();
+
+    }
+
+
+
+
 }
+
+
 
 function cls_input() {
     document.getElementById("input-search").value = "";
