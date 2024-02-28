@@ -32,7 +32,7 @@ const checkPriceGas = async(event) => {
     };
 
     const response = await axios.get(urlGas, { headers: headers });
-    console.log(response.data);
+    // console.log(response.data);
 
     // creo un nuevo arreglo de objetos con los datos que necesito
     const fuelsData = response.data.map((fuel) => ({
@@ -67,9 +67,7 @@ function showPriceGas(gasStations) {
             //creo un array porque el nombre de la clave del objeto es numerico
             let prueba = [];
             prueba = Object.values(gasStation);
-            console.log(prueba);
-            //-----
-
+          
             const key93 = 93;
             const key95 = 95;
             const key97 = 97;
@@ -122,12 +120,13 @@ function showPriceGas(gasStations) {
 
 
 function crearChart(gasStations) {
-    //aca deberia recibir los array de datos listo de la funcion anterior
+//    limpio el canva anterior y coloco el nuevo grafico
     $('#graphic-fuels').replaceWith($('<canvas id="graphic-fuels" height="320px"></canvas>'));
     const graph = document.getElementById("graphic-fuels");
+
+
     
-
-
+ //aca deberia recibir los array de datos listo de la funcion anterior
     let station = [];
     let price_93 = [];
     let price_95 = [];
